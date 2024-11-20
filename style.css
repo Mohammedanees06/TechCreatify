@@ -1,0 +1,341 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+    box-sizing: border-box;
+   
+}
+
+html ,body{
+    font-size: 100%;
+    line-height: 100%;
+    width: 100%;
+   margin: 0;
+   padding: 0;
+   overflow-x: hidden; 
+   
+}
+body::-webkit-scrollbar {
+    width: 0px;  /* Hides the scrollbar */
+    background: transparent; /* Optional: to make sure the scrollbar is fully invisible */
+  }
+
+/* Styles the selected text with white color and black background */
+::selection {
+    color: #fff; /* White text  with black bg*/
+    background-color: #000; /* Black background */
+}
+
+
+#cursor {
+    height: 14px; 
+    width: 14px; 
+    background-color: rgb(49, 48, 48);
+    border-radius: 50%;       
+    position: fixed;
+    z-index: 99;                    /* Ensures this text stays on top of overlapping elements, making it always clickable. */
+    transition: all linear 0.05s;   /* Adds a smooth 50ms transition to *any* style change (like color or size) for this element. */
+}
+
+
+/* Full width of screen */
+#main {  
+    width: 100%;
+    background-color: white;
+   margin-bottom: 250px;;
+}
+
+#home {
+    width: 100%;
+    min-height: 200vh;
+}
+
+#nav {
+    width: 100%;
+    padding: 10px 50px;
+    display: flex;
+    justify-content: space-between;      /* Distributes items with equal space between them. Aligns all items at the center horizontally  */
+    align-items: center;                 /* Vertically centers the items. */
+    background-color: transparent;      /* Start with transparent */
+    transition: background-color 0.6s ease-in-out, padding 0.6s ease-in-out, height 0.6s ease-in-out; /* Smooth transition for background color and size */
+    position: fixed;                     /* Fix the navbar at the top */
+    top: 0;
+    left: 0;
+    z-index: 100;                        /* Ensure it stays on top */
+}
+
+
+#nav.scrolled {
+    background-color: #219B9D;       /* Color when scrolled */
+    padding: 3px 50px;
+}
+
+
+
+#nav img {
+    width: 70px;
+    height: 70px;
+    border-radius: 30%; /* Creates a pill shape */
+ 
+}
+
+#nav.scrolled img {
+    width: 55px;
+    height: 55px;
+    border-radius: 30%; /* Keep pill shape when scrolled */
+ 
+}
+
+
+
+#nav #right {
+    /* Selects the element with ID 'right' inside the element with ID 'nav'. #nav #right{} is used when you want to apply styles to the #right element only when it is inside the #nav element. It makes sure that only the #right inside #nav gets styled, not others with the same #right ID elsewhere on the page. It’s useful for more specific targeting and avoiding style conflicts.*/   
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+#nav a {
+    text-decoration: none;
+    font-weight: 300;
+    color: black;
+    font-size: 1.2vw;
+    font-weight: bold;
+    letter-spacing: -1px;
+}
+
+#nav i {
+    margin-top: 5px;
+    font-size: 21px;
+    
+}
+
+#home #homemain {
+    width: 100%;
+    line-height: 3.5em;
+    padding: 14.5vw 13vw;  /* Top, bottom and right, left padding */
+    margin-top: 50px;
+}
+
+#homemain h1 {
+    font-weight: 400;
+    letter-spacing: -0.1vw;
+    font-size: 1.7vw;
+}
+
+.headings {
+    display: flex;
+    gap: 40px;
+}
+
+#homemain .headings h1 {
+    margin-top: 15px;
+    color: transparent;
+    -webkit-text-stroke: 1px #000;
+    font-size: 5.5vw;
+    letter-spacing: -1px;
+    font-weight: 900;
+}
+
+#homelast {
+    padding: 3.3vw 13vw;
+}
+
+#homelast p {
+    width: 75%;
+    font-size: 1.40vw;
+    font-weight: 320;
+    letter-spacing: -0.05vw;
+    line-height: 1.2em;
+}
+
+ #highlighted {
+    padding:9vw 16vw;
+    display:flex;
+    margin-top:-770px;
+    flex-direction: column;
+    align-items: center;
+ }
+
+ .high>h1 {                /* Targeting only direct children of .parent */
+    line-height: 1;
+    font-size: 3vw;
+    font-weight: 300;
+ }
+
+ .high>h1:nth-child(2) {   /* This will apply to the second <h1> inside .high */
+    color: transparent;
+    -webkit-text-stroke: 1px #000;
+ }
+
+ #himg {
+    display: flex;
+    justify-content: space-between;
+    width:100%;
+    height: 100vh;
+    margin-top: 4vw;
+
+
+ }
+ #hleft {
+    overflow: hidden;   /* Extra content outside this size will be hidden */
+    width:45%;
+    height: inherit;
+   
+ }
+ .hleftel {
+    width:100%;
+    height:inherit;
+    line-height: 0.08;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   
+ }
+ .hleftel h1 {
+    font-size: 2.2vw;
+    line-height: 1;
+    font-weight:400;
+    text-transform: capitalize;
+    margin:1vw 0;
+ }
+ .hleftel h3 {
+    font-size:1.3vw;
+    font-weight: 400;
+    
+ }
+ .hleftel h4 {
+    opacity: 0.5;
+    line-height: 1;
+    margin-top: -6px;
+   
+ }
+ #hright {
+    width:45%;
+    height: inherit;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+ 
+
+ }
+ #hright .img {
+    width: 90%;  /*90% of the parent  */
+    height: 90%;  /*90% of the parent  */
+    background-color: burlywood;
+ }
+
+#btndiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+#btndiv button {
+    padding: 1.5vw 2.5vw;
+    border-radius: 100px;
+    border: 3px solid yellow;
+    background-color: #fff;
+    font-size: 1vw;
+    margin-bottom: -30px;
+}
+
+#devl {
+    width: 100%;
+    line-height: 1.2;
+    padding-top: 1vw;
+    padding-bottom: 3vw;
+    padding-left: 2vw;
+    margin-left: 80px;
+    
+}
+#devl h1{
+    font-size: 3vw;
+    font-weight: 400;
+    width:50%;
+    line-height: 1;
+
+    
+}
+#devl p {
+    font-size: 1.4vw;
+    margin-top: 2vw;
+    letter-spacing: -.5px;
+    width: 60%;
+}
+
+#boxes {
+    display: flex;
+    padding:5.7vw 8vw;       /* Top and bottom padding: 2% of viewport width, left and right: 8% */
+   justify-content: space-between;
+ 
+  
+}
+.box {  
+    border-radius: 8%;
+    width:33% ;
+    margin-top: -80px;
+}
+.box .img{
+   width: 100%;
+   background-color: #219B9D;
+   height: 270px;
+   overflow: hidden;
+   border-radius: 5px;
+}
+
+.box .img img {
+  width :100%;
+  height:100%;
+  object-fit: cover; 
+}
+.box .tag {
+pad: 10px 22px;
+background-color: #f7f7f7;
+width: fit-content;
+border-radius: 100px;
+margin: 20px 0;
+
+}
+.box h3 {
+    font-size: 1.4vw;
+    font-weight: 400;
+    letter-spacing: -.5px;
+    line-height: 1;
+}
+
+
+
+
+
+
+
+
+
+
+footer {
+    height: 300px;
+    width:100%;
+    background-color: #219B9D;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+footer p{
+font-size: 40px;
+color: white;
+line-height: 0.8em;
+margin-top: 85px;
+}
+footer h2{
+    font-weight: 5;
+    color: white;
+  
+    }
+#foo {
+    width:100%;
+    height:85px;
+    background-color: rgb(45, 43, 43);
+    margin-top:68px;
+
+}
